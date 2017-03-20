@@ -22,7 +22,7 @@ public void Debit(double money){
 	balance-=money;
 	if(balance<-100){
 		
-		System.out.print("출금 불가\n");
+		System.out.print("출금 불가합니다\n");
 		balance+=money;
 	}
 }
