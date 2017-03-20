@@ -1,33 +1,27 @@
 
 public class Account {
-	
 	private double balance;
-	public Account(){
-		
-		balance=100.00;
+
+	Account() {
+		balance=100;
 	}
-	
- void Credit(double money)
- {
-	 this.balance+=money;
-	 
- }
- void Debit(double money)
- {
-	 if(this.balance<money)
-	 {
-		 System.out.print("Debit amount exceeded account balance\n");
-	 }
-	 else{
-	 this.balance-=money;
-	 }
- }
- double getBalance()
- {
-	 return this.balance;
- }
- protected void setBalance(double a){
-	 balance=a;
-	 
- }
+
+	public void Credit(double money) {
+		balance += money;
+	}
+
+	public void Debit(double money) {
+		if(balance>money){
+		balance -= money;
+		}
+		else{
+		System.out.print("Debit amount exceeded account balance\n");
+		}
+	}
+
+	public double getBalance() {
+		return balance;
+
+	}
+
 }

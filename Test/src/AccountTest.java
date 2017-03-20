@@ -2,31 +2,25 @@ import java.util.Scanner;
 
 public class AccountTest {
 	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
-		System.out.print("How much money do you put into account1:");
-		double amount1 = input.nextDouble();
-		Account account1 = new Account(amount1);
-		account1.Credit(amount1);
-		
-		System.out.print("How much money do you put into account2:");
-		double amount2 = input.nextDouble();
-		Account account2 = new Account(amount2);
-		account2.Credit(amount2);	
-	
-		
-		System.out.print("account1 balance:"+account1.getBalance()+"\n");
-		System.out.print("account2 balance:"+account2.getBalance()+"\n");
-		System.out.print("Enter withdrawl amount for account1:");
-		double amount3 = input.nextDouble();
-		System.out.printf("subtracting"+" "+amount3+"from account1 balance\n");
-		account1.Debit(amount3);
-		System.out.print("account1 balance:"+account1.getBalance()+"\n");
-		System.out.print("account2 balance:"+account2.getBalance()+"\n");
-		System.out.print("Enter withdrawl amount for account2:");
-		double amount4 = input.nextDouble();
-		System.out.printf("subtracting"+" "+amount4+"from account2 balance\n");
-		account2.Debit(amount4);
-		System.out.print("account1 balance:"+account1.getBalance()+"\n");
-		System.out.print("account2 balance:"+account2.getBalance()+"\n");
+		Scanner input= new Scanner(System.in);
+			checkingAccount Account1 =new checkingAccount();
+			checkingAccount Account2 =new checkingAccount();
+			System.out.print("Account1 balance:"+Account1.getBal()+"\n");
+			System.out.print("Account2 balance:"+Account2.getBal()+"\n");
+			System.out.print("Enter deposit amount for Account1:");
+			double mo1=input.nextDouble();
+			Account1.Credit(mo1);
+			System.out.print("Account1 balance:"+Account1.getBal()+"\n");
+			System.out.print("Account2 balance:"+Account2.getBal()+"\n");
+			System.out.print("Enter withdrawal amount for Account2:");
+			double mo2=input.nextDouble();
+			Account2.Debit(mo2);
+			System.out.print("Account1 balance:"+Account1.getBal()+"\n");
+			System.out.print("Account2 balance:"+Account2.getBal()+"\n");
+			System.out.print("next month!\n");
+			Account1.nextMonth();
+			Account2.nextMonth();
+			System.out.print("Account1 balance:"+Account1.getBal()+"\n");
+			System.out.print("Account2 balance:"+Account2.getBal()+"\n");
 	}
 }
