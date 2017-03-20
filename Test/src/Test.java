@@ -1,19 +1,16 @@
 import java.util.Scanner;
 
-public class AccountTest {
+public class Test {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
+		CheckingAccount account1 = new CheckingAccount();
+		CheckingAccount account2 = new CheckingAccount();
 		System.out.print("How much money do you put into account1:");
 		double amount1 = input.nextDouble();
-		Account account1 = new Account(amount1);
 		account1.Credit(amount1);
-		
 		System.out.print("How much money do you put into account2:");
 		double amount2 = input.nextDouble();
-		Account account2 = new Account(amount2);
-		account2.Credit(amount2);	
-	
-		
+		account2.Credit(amount2);
 		System.out.print("account1 balance:"+account1.getBalance()+"\n");
 		System.out.print("account2 balance:"+account2.getBalance()+"\n");
 		System.out.print("Enter withdrawl amount for account1:");
@@ -28,5 +25,12 @@ public class AccountTest {
 		account2.Debit(amount4);
 		System.out.print("account1 balance:"+account1.getBalance()+"\n");
 		System.out.print("account2 balance:"+account2.getBalance()+"\n");
+		account1.nextMonth();
+		account2.nextMonth();
+		System.out.print("next month!\n");
+		System.out.print("account1 balance:"+account1.getBalance()+"\n");
+		System.out.print("account2 balance:"+account2.getBalance()+"\n");
+		
 	}
+
 }

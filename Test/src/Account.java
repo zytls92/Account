@@ -1,25 +1,33 @@
 
 public class Account {
-	private String name;
-	private double money;
+	
+	private double balance;
+	public Account(){
+		
+		balance=100.00;
+	}
 	
  void Credit(double money)
  {
-	 this.money+=money;
+	 this.balance+=money;
 	 
  }
  void Debit(double money)
  {
-	 if(this.money<money)
+	 if(this.balance<money)
 	 {
-		 System.out.printf("Debit amount exceeded account balance\n");
+		 System.out.print("Debit amount exceeded account balance\n");
 	 }
 	 else{
-	 this.money-=money;
+	 this.balance-=money;
 	 }
  }
- double Balance()
+ double getBalance()
  {
-	 return this.money;
+	 return this.balance;
+ }
+ protected void setBalance(double a){
+	 balance=a;
+	 
  }
 }
