@@ -12,7 +12,7 @@ public class Account {
  {
 	 if(this.money<money)
 	 {
-		 System.out.print("Debit amount exceeded account balance\n");
+		 System.out.printf("Debit amount exceeded account balance\n");
 	 }
 	 else{
 	 this.money-=money;
