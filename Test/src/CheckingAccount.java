@@ -57,4 +57,16 @@ public class CheckingAccount extends Account {
 			return false;
 		}
 	}
+	@Override
+	public double EstimateValue(int month)
+	{
+		
+		
+		return balance*(Math.pow(1+interest, month));
+	}
+	public String toString()
+	{
+		return String.format("CheckingAccount_Balance:"+balance);
+		
+	}
 }
