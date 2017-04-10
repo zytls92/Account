@@ -14,11 +14,11 @@ public abstract class Account implements Valuable{
 		balance += money;
 	}
 
-	public void debit(double money) {
-		if(balance>money) {
+	public void debit(double money)throws Exception {
+		if(balance>=money) {
 			balance -= money;
-		} else {
-			System.out.print("Debit amount exceeded account balance\n");
+		} else if(balance-money<0) {
+			  throw new Exception("출력 불가");
 		}
 	}
 

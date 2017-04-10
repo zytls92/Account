@@ -8,10 +8,11 @@ public class SavingAccount extends Account {
 			this.savingInterest=interest;
 	}
 	@Override
-	public void debit(double money){
+	public void debit(double money) throws Exception{
 		if(this.time<12){
-			System.out.println("아직 출금할 수 없습니다.");
-		} else{
+			throw new Exception("아직 출금할 수 없습니다");
+		} 
+		else{
 			balance=balance-money;
 		}
 		

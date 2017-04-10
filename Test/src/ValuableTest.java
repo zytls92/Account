@@ -1,4 +1,4 @@
-
+/*
 public class ValuableTest {
 
 	public static void main(String[] args){
@@ -14,3 +14,4 @@ public class ValuableTest {
 		}
 	}
 }
+*/
