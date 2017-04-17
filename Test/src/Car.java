@@ -8,10 +8,15 @@ private double price;
 		this.price=price;
 	}
 	@Override
-	public double EstimateValue(int month)
+	public double estimateValue(int month)
 	{
 		
 		return 0.8*price*(Math.pow(1-0.01, month));
+	}
+	public double estimateValue()
+	{
+		return 0.8*price*(Math.pow(1-0.01, 1));
+		
 	}
 	public String toString()
 	{

@@ -1,5 +1,6 @@
 
 public interface Valuable {
 
-	public double EstimateValue(int month);
+	public double estimateValue(int month);
+	public double estimateValue();
 }

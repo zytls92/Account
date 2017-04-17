@@ -53,8 +53,9 @@ public class CheckingAccount extends Account {
 		}
 
 	}
+	
 
-	public boolean isBankrupt() {
+	public boolean isBankrupted() {
 		if (balance < creditLimit) {
 			return true;
 		} else {
@@ -63,9 +64,21 @@ public class CheckingAccount extends Account {
 	}
 
 	@Override
-	public double EstimateValue(int month) {
+	public double estimateValue(int month) {
 
 		return balance * (Math.pow(1 + interest, month));
+	}
+	public void passTime() {
+		if (balance >= 0) {
+			balance = balance * (Math.pow(1 + interest, 1));
+		} else {
+			balance = balance * (Math.pow(1 + loanInterest, 1));
+		}
+
+	}
+	public double estimateValue() {
+
+		return balance * (Math.pow(1 + interest, 1));
 	}
 
 	public String toString() {

@@ -1,9 +1,9 @@
 
-public class SavingAccount extends Account {
+public class SavingsAccount extends Account {
 
 	private double savingInterest;
 	private int time;
-	public SavingAccount(double balance, double interest){
+	public SavingsAccount(double balance, double interest){
 			super(balance); 
 			this.savingInterest=interest;
 	}
@@ -30,13 +30,11 @@ public class SavingAccount extends Account {
 		if(this.time==12){
 			balance=balance*Math.pow((1+savingInterest), this.time);
 	    }
-		else{
-			balance=balance;
-		}
+		
 			
 	}
 	@Override
-	public double EstimateValue(int month)
+	public double estimateValue(int month)
 	{
 		return balance*Math.pow((1+savingInterest),month);
 		
@@ -45,5 +43,18 @@ public class SavingAccount extends Account {
 	{
 		return String.format("SavingAccount_Balance:"+balance);
 		
+	}
+	public void passTime() {
+		
+		this.time+=1;
+		if(this.time==12)
+		{
+			balance=balance*Math.pow((1+savingInterest), this.time);
+			
+		}
+	}
+	public double estimateValue() {
+
+		return balance*Math.pow((1+savingInterest),1);
 	}
 }
