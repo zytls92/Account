@@ -9,7 +9,6 @@ private double price;
 	@Override
 	public double estimateValue(int month)
 	{
-		
 		return 0.8*price*(Math.pow(1-0.01, month));
 	}
 	public double estimateValue()
