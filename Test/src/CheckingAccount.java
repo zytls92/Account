@@ -1,11 +1,9 @@
-
 public class CheckingAccount extends Account {
 	private double creditLimit;
 	private double interest;
 	private double loanInterest;
 
-	CheckingAccount(double balance, double limit,
-			double interest, double loanInterest) {
+	CheckingAccount(double balance, double limit, double interest, double loanInterest) {
 		super(balance);
 		creditLimit = -limit;
 		this.interest = interest;
@@ -14,59 +12,76 @@ public class CheckingAccount extends Account {
 	}
 
 	public void nextMonth() {
-		if(balance>=0)
-		{
-			balance=balance*(1+interest);
-			
-		}
-		else{
-			balance=balance*(1+loanInterest);
-		}
-	}
-@Override
-	public void debit(double money) {
-		if ( balance- money >= creditLimit) {
-			balance=balance-money;
+		if (balance >= 0) {
+			balance = balance * (1 + interest);
+
 		} else {
-			System.out.println("오류입니다.");		
+			balance = balance * (1 + loanInterest);
 		}
 	}
-	public double getWithdrawableAccount(){
-		if(balance>creditLimit){
-		return balance-creditLimit;
+
+	@Override
+	public void debit(double money) throws Exception {
+		if (money < 0) {
+			throw new Exception("음수 입력!!");
+		} else {
+			if (balance - money >= creditLimit) {
+				balance = balance - money;
+			}
+
+			else {
+				throw new Exception("한도 초과입니다");
+			}
 		}
-		else{
+	}
+
+	public double getWithdrawableAccount() {
+		if (balance > creditLimit) {
+			return balance - creditLimit;
+		} else {
 			return 0;
 		}
-		
+
 	}
-	public void passTime(int time){
-		if(balance>=0){
-			balance=balance*(Math.pow(1+interest, time));
-		} else{
-			balance=balance*(Math.pow(1+loanInterest, time));
+
+	public void passTime(int time) {
+		if (balance >= 0) {
+			balance = balance * (Math.pow(1 + interest, time));
+		} else {
+			balance = balance * (Math.pow(1 + loanInterest, time));
 		}
-		
+
 	}
-	public boolean isBankrupt()
-	{
-		if(balance<creditLimit)
-		{
+	
+
+	public boolean isBankrupted() {
+		if (balance < creditLimit) {
 			return true;
-		} else{
+		} else {
 			return false;
 		}
 	}
+
 	@Override
-	public double EstimateValue(int month)
-	{
-		
-		
-		return balance*(Math.pow(1+interest, month));
+	public double estimateValue(int month) {
+
+		return balance * (Math.pow(1 + interest, month));
 	}
-	public String toString()
-	{
-		return String.format("CheckingAccount_Balance:"+balance);
-		
+	public void passTime() {
+		if (balance >= 0) {
+			balance = balance * (Math.pow(1 + interest, 1));
+		} else {
+			balance = balance * (Math.pow(1 + loanInterest, 1));
+		}
+
+	}
+	public double estimateValue() {
+
+		return balance * (Math.pow(1 + interest, 1));
+	}
+
+	public String toString() {
+		return String.format("CheckingAccount_Balance:" + balance);
+
 	}
 }
