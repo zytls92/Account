@@ -11,6 +11,8 @@ private double price;
 	{
 		return 0.8*price*(Math.pow(1-0.01, month));
 	}
+
+	
 	public double estimateValue()
 	{
 		return 0.8*price*(Math.pow(1-0.01, 1));

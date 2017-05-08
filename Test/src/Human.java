@@ -13,6 +13,7 @@ public double estimateValue(int month)
 	
 	return Double.POSITIVE_INFINITY;
 }
+
 public double estimateValue()
 {
 	return Double.POSITIVE_INFINITY;

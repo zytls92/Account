@@ -74,7 +74,12 @@ public class CheckingAccount extends Account {
 			balance = balance * (Math.pow(1 + loanInterest, 1));
 		}
 
+
+
 	}
+
+
+
 	public double estimateValue() {
 
 		return balance * (Math.pow(1 + interest, 1));

@@ -19,7 +19,9 @@ public abstract class Account implements Valuable{
 		if(balance>=money) {
 			balance -= money;
 		} else if(balance-money<0) {
-			  throw new Exception("출금 불가");
+
+			  throw new Exception("출금 불가");  
+
 		}
 	}
 
@@ -30,6 +32,7 @@ public abstract class Account implements Valuable{
 		
 	public abstract void passTime(int time);
 	public abstract void passTime();
+
 	public static double sumForAccount(ArrayList<? extends Account>list){
 		double sum=0;
 		for(Account account:list){
@@ -45,5 +48,8 @@ public abstract class Account implements Valuable{
 			account.passTime(month);
 		}
 	}
+
+	
+
 
 }
