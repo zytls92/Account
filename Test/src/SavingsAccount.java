@@ -26,10 +26,9 @@ public class SavingsAccount extends Account {
 	public void passTime(int time){
 		this.time+=time;
 
-		if(this.time==12){
-			balance=balance*Math.pow((1+savingInterest), this.time);
+		if(this.time>=12){
+			balance=balance*Math.pow((1+savingInterest), 12);
 	    }
-		
 			
 	}
 	@Override
